@@ -12,6 +12,8 @@ app.use(express.json())
 // variable to access transactions data 
 const transactionsController = require("./Controllers/transactionsController.js")
 
+// variable to access transactions data from models in transactionsController
+app.use("/transactions", transactionsController);
 
 
 // middleware message that will run in terminal
@@ -25,10 +27,8 @@ app.get("/", (req, response) => {
     response.send("8.4 Kenyetta Budgeting App");
   });
 
-
-// variable to access transactions data from models in transactionsController
-app.use("/transactions", transactionsController);
-
+  
+  
 
 // ERROR - If you can't access the data respond with 404 message page 
 app.use("*", (req, res) => {
