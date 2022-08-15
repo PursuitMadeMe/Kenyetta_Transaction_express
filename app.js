@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 // variable to access transactions data 
-const transactionsController = require("./controllers/transactionsController.js")
+const transactionsController = require("./controllers/transactionsController")
 
 // variable to access transactions data from models in transactionsController
 app.use("/transactions", transactionsController);
